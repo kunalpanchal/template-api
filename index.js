@@ -1,13 +1,25 @@
-const express = require( "express" );
+const express = require("express")
+const cors = require('cors')
+const bodyParser = require('body-parser')
+
+require('dotenv').config()
+
 const app = express();
-const port = 8080; // default port to listen
 
-// define a route handler for the default home page
-app.get( "/", ( req, res ) => {
-    res.send( "Hello world!" );
-} );
+app.use(cors())
+app.use(bodyParser.json())
 
-// start the Express server
-app.listen( port, () => {
-    console.log( `server started at http://localhost:${ port }` );
-} );
+require('./db')(app);
+require('./config/swagger')(app)
+
+app.get("/auth/signup", (req, res) => {
+    res.send("Hello world!");
+});
+
+app.get("/auth/signin", (req, res) => {
+    res.send("Hello world!");
+});
+
+app.listen(process.env.PORT, () => {
+    console.log(`server started at http://localhost:${process.env.PORT}`);
+});

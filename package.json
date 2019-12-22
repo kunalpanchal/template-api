@@ -4,7 +4,8 @@
   "description": "Basic API template with Node, Swagger, JWT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon",
+    "start:prod": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -23,11 +24,16 @@
   },
   "homepage": "https://github.com/kunalpanchal/template-api#readme",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.2"
   },
   "devDependencies": {
-    "express-swagger-generator": "^1.1.15"
+    "express-swagger-generator": "^1.1.15",
+    "nodemon": "^2.0.2"
   }
 }
