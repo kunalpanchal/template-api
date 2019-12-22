@@ -24,7 +24,7 @@ let swaggerOptions = {
         }
     },
     basedir: __dirname,
-    files: ['./routes/**/*.js', './db/models/*.js',]
+    files: ['./../routes/*.js', './../db/models/*.js',]
 }
 
 module.exports = app => expressSwagger(app)(swaggerOptions)
